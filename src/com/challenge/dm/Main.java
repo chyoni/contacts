@@ -56,11 +56,30 @@ public class Main {
                     // TODO: Search for a contact
                     break;
                 case 4:
-                    // TODO: Delete a contact
+                    deleteContact();
                     break;
                 case 5:
                     return;
             }
+        }
+    }
+
+    private static void deleteContact() {
+        System.out.println("Enter name that you want to delete: ");
+        String deleteName = scanner.next();
+
+        boolean isDeleted = false;
+
+        for (Contact contact : contacts) {
+            if (contact.getName().equals(deleteName)) {
+                contacts.remove(contact);
+                System.out.println("The contact was deleted.");
+                isDeleted = true;
+                break;
+            }
+        }
+        if (!isDeleted) {
+            System.out.println("Contact not found.");
         }
     }
 
