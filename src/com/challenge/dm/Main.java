@@ -37,34 +37,30 @@ public class Main {
     }
 
     private static void showManageContactsOptions() {
-        System.out.println("------ Select what you want ------\n" +
-                "\t1. Show all contacts\n" +
-                "\t2. Add a new contact\n" +
-                "\t3. Search for a contact\n" +
-                "\t4. Delete a contact\n" +
-                "\t5. Go back to the previous menu\n");
-
-        selectManageContactsOption();
-    }
-
-    private static void selectManageContactsOption() {
-        int selected = scanner.nextInt();
-        switch (selected) {
-            case 1:
-                showAllContact();
-                break;
-            case 2:
-                addContact();
-                break;
-            case 3:
-                // TODO: Search for a contact
-                break;
-            case 4:
-                // TODO: Delete a contact
-                break;
-            case 5:
-                // TODO: Go back to the previous menu
-                break;
+        while (true) {
+            System.out.println("------ Select what you want ------\n" +
+                    "\t1. Show all contacts\n" +
+                    "\t2. Add a new contact\n" +
+                    "\t3. Search for a contact\n" +
+                    "\t4. Delete a contact\n" +
+                    "\t5. Go back to the previous menu\n");
+            int selected = scanner.nextInt();
+            switch (selected) {
+                case 1:
+                    showAllContact();
+                    break;
+                case 2:
+                    addContact();
+                    break;
+                case 3:
+                    // TODO: Search for a contact
+                    break;
+                case 4:
+                    // TODO: Delete a contact
+                    break;
+                case 5:
+                    return;
+            }
         }
     }
 
